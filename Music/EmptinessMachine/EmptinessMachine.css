@@ -524,6 +524,21 @@ body {
     .player-right {
         display: none;
     }
+
+    .player-progress {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        width: 100%;
+    }
+
+    .player-time {
+        font-size: 11px;
+        color: #b3b3b3;
+        min-width: 40px;
+        text-align: center;
+        display: block;
+    }
 }
 
 /* Diseño responsive de la tracklist para pantallas muy pequeñas*/
@@ -561,5 +576,14 @@ body {
     .album-cover {
         width: 160px;
         height: 160px;
+    }
+
+    .player-time {
+        font-size: 10px;
+        min-width: 35px;
+    }
+
+    .player-progress {
+        gap: 4px;
     }
 }

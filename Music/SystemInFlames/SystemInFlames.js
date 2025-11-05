@@ -37,7 +37,7 @@ function formatearTiempo(segundos) {
 }
 
 function actualizarProgreso() {
-    if (reproductorAudio.duration) {
+    if (reproductorAudio.duration && tiempoActual && rellenoProgreso) {
         const porcentaje = (reproductorAudio.currentTime / reproductorAudio.duration) * 100;
         rellenoProgreso.style.width = porcentaje + '%';
         tiempoActual.textContent = formatearTiempo(reproductorAudio.currentTime);
@@ -199,7 +199,14 @@ function cargarDuracionesCanciones() {
 reproductorAudio.addEventListener('timeupdate', actualizarProgreso);
 reproductorAudio.addEventListener('ended', reproducirSiguiente);
 reproductorAudio.addEventListener('loadedmetadata', () => {
-    tiempoTotal.textContent = formatearTiempo(reproductorAudio.duration);
+    if (tiempoTotal && reproductorAudio.duration && !isNaN(reproductorAudio.duration)) {
+        tiempoTotal.textContent = formatearTiempo(reproductorAudio.duration);
+    }
+});
+reproductorAudio.addEventListener('canplay', () => {
+    if (tiempoTotal && reproductorAudio.duration && !isNaN(reproductorAudio.duration)) {
+        tiempoTotal.textContent = formatearTiempo(reproductorAudio.duration);
+    }
 });
 reproductorAudio.addEventListener('error', () => {
     alert('Error al cargar el archivo de audio. Verifica que el archivo existe y está en la ruta correcta.');
