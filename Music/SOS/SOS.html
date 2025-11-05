@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S.O.S - Álbum</title>
+    <link rel="icon" type="image/png" href="../../assets/icons/icon.png">
+    <link rel="stylesheet" href="SOS.css">
+</head>
+<body>
+    <div class="top-bar">
+        <a href="https://spotify.com" target="_blank" class="spotify-link">
+            <img class="spotify-logo" src="../../assets/icons/Spotify.png">
+        </a></div>
+
+    <div class="main-content">
+        <div class="container">
+            <div class="album-header">
+                <img src="../../assets/images/albums/SOS.png" alt="Portada del álbum" class="album-cover">
+                <div class="album-info">
+                    <div class="album-type">Álbum</div>
+                    <h1 class="album-title">S.O.S</h1>
+                    <div class="album-meta">
+                        <img src="../../assets/icons/icon.png" alt="Patchlove" class="artist-image">
+                        <span class="artist-name">Patchlove</span>
+                        <span class="separator">•</span>
+                        <span>2025</span>
+                        <span class="separator">•</span>
+                        <span>5 canciones</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tracklist">
+                <div class="track-header">
+                    <div>#</div>
+                    <div>Título</div>
+                    <div>Duración</div>
+                </div>
+
+                <div class="track" data-track="0" data-title="S.O.S" data-artist="Patchlove" data-audio="../Música/BreakTheSilence.mp3">
+                    <div class="track-number">1</div>
+                    <div class="track-info">
+                        <div class="track-title">S.O.S</div>
+                        <div class="track-artist">Patchlove</div>
+                    </div>
+                    <div class="track-duration">--:--</div>
+                </div>
+
+                <div class="track" data-track="1" data-title="Panic Season" data-artist="Patchlove" data-audio="../Música/BrokenSouls.mp3">
+                    <div class="track-number">2</div>
+                    <div class="track-info">
+                        <div class="track-title">Panic Season</div>
+                        <div class="track-artist">Patchlove</div>
+                    </div>
+                    <div class="track-duration">--:--</div>
+                </div>
+
+                <div class="track" data-track="2" data-title="Scream It Back" data-artist="Patchlove" data-audio="../Música/EchoesOfChaos.mp3">
+                    <div class="track-number">3</div>
+                    <div class="track-info">
+                        <div class="track-title">Scream It Back</div>
+                        <div class="track-artist">Patchlove</div>
+                    </div>
+                    <div class="track-duration">--:--</div>
+                </div>
+
+                <div class="track" data-track="3" data-title="Lighthouse" data-artist="Patchlove" data-audio="../Música/FragmentsOfAnger.mp3">
+                    <div class="track-number">4</div>
+                    <div class="track-info">
+                        <div class="track-title">Lighthouse</div>
+                        <div class="track-artist">Patchlove</div>
+                    </div>
+                    <div class="track-duration">--:--</div>
+                </div>
+
+                <div class="track" data-track="4" data-title="Calm After Chaos" data-artist="Patchlove" data-audio="../Música/ShadowsInMe.mp3">
+                    <div class="track-number">5</div>
+                    <div class="track-info">
+                        <div class="track-title">Calm After Chaos</div>
+                        <div class="track-artist">Patchlove</div>
+                    </div>
+                    <div class="track-duration">--:--</div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="player-bar">
+        <div class="player-left">
+            <img src="../../assets/images/albums/SOS.png" alt="Album cover" class="player-song-image" id="playerImage">
+            <div class="player-song-info">
+                <div class="player-song-title" id="playerTitle">Selecciona una canción</div>
+                <div class="player-song-artist" id="playerArtist">Patchlove</div>
+            </div>
+        </div>
+
+        <div class="player-center">
+            <div class="player-controls">
+                <button class="player-btn" id="botonAnterior" aria-label="Canción anterior">
+                    <img src="../../assets/icons/boton-anterior.png" alt="Anterior" class="icono-boton">
+                </button>
+                <button class="player-btn play-btn" id="botonPlayPause" aria-label="Reproducir o pausar">
+                    <img src="../../assets/icons/boton-play.png" alt="Play/Pause" class="icono-boton icono-play" id="iconoPlayPause">
+                </button>
+                <button class="player-btn" id="botonSiguiente" aria-label="Canción siguiente">
+                    <img src="../../assets/icons/boton-siguiente.png" alt="Siguiente" class="icono-boton">
+                </button>
+            </div>
+            <div class="player-progress">
+                <span class="player-time" id="currentTime">0:00</span>
+                <div class="progress-bar" id="progressBar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <span class="player-time" id="totalTime">0:00</span>
+            </div>
+        </div>
+
+        <div class="player-right">
+            <div class="volume-control">
+                <button class="volume-btn" id="botonVolumen" aria-label="Control de volumen">
+                    <img src="../../assets/icons/volumen-alto.png" alt="Volumen" class="icono-boton" id="iconoVolumen">
+                </button>
+                <div class="volume-bar" id="volumeBar">
+                    <div class="volume-fill" id="volumeFill" style="width: 70%;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <audio id="audioPlayer" preload="metadata"></audio>
+    <script src="SOS.js"></script>
+</body></html>

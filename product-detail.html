@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Producto - Patchlove</title>
+  <link rel="icon" href="assets/icons/icon.png">
+  <link rel="stylesheet" href="css/styles_product.css">
+</head>
+<body>
+
+  <!-- Navegación -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <div class="logo">
+        <a href="index.html">
+          <img src="assets/icons/logo.png" alt="Logo Patchlove">
+        </a>
+      </div>
+      <div class="nav-links">
+        <a href="index.html#sobre">Sobre nosotros</a>
+        <a href="index.html#musica">Explora nuestra música</a>
+        <a href="index.html#tour">Tour</a>
+        <a href="Merch.html">Merch</a>
+        <a href="index.html#contacto">Contacto</a>
+      </div>
+      <div class="menu-toggle">&#9776;</div>
+    </div>
+  </nav>
+
+  <!-- Product Detail -->
+  <main class="product-detail-wrapper">
+    <div class="product-container">
+      
+      <!-- Left: Product Images -->
+      <div class="product-images">
+        <div class="main-image-container">
+          <img id="mainImage" src="" alt="Producto">
+          <button class="image-nav prev" id="prevBtn">&#8249;</button>
+          <button class="image-nav next" id="nextBtn">&#8250;</button>
+        </div>
+        <div class="thumbnail-container">
+          <div class="thumbnail active" id="thumb1">
+            <img src="" alt="Vista 1">
+          </div>
+          <div class="thumbnail" id="thumb2">
+            <img src="" alt="Vista 2">
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Product Info -->
+      <div class="product-info">
+        <h1 class="product-title" id="productTitle">PRODUCTO</h1>
+        <div class="product-price" id="productPrice">$0.00 USD</div>
+        
+        <div class="product-form">
+          <div class="form-group">
+            <label for="quantity">CANTIDAD</label>
+            <select id="quantity" class="quantity-select">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="size">TALLA</label>
+            <div class="size-buttons" id="sizeButtons">
+              <button class="size-btn" data-size="S">S</button>
+              <button class="size-btn" data-size="M">M</button>
+              <button class="size-btn" data-size="L">L</button>
+              <button class="size-btn" data-size="XL">XL</button>
+              <button class="size-btn" data-size="2XL">2XL</button>
+            </div>
+          </div>
+
+          <button class="btn-add-cart" id="addToCart">AGREGAR AL CARRITO</button>
+          
+          <div class="shipping-info">
+            <p>ENVÍO DISPONIBLE</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer id="contacto" class="footer">
+    <div class="footer-content">
+      <div class="social-links">
+        <a href="https://www.instagram.com/patchloveband" class="social-icon">
+          <img src="assets/icons/instagram.png" alt="Instagram">
+        </a>
+        <a href="https://www.x.com/patchloveband" class="social-icon">
+          <img src="assets/icons/twitter.png" alt="Twitter">
+        </a>
+        <a href="mailto:etherispatchlove@gmail.com" class="social-icon">
+          <img src="assets/icons/email.png" alt="Gmail">
+        </a>
+      </div>
+      
+      <div class="brand-name">
+        <h2>PATCHLOVE</h2>
+      </div>
+    </div>
+    
+    <div class="copyright">
+      <p>&copy; 2025 Patchlove. Privacy Policy. Terms of Use.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Obtener parámetros de la URL
+    const params = new URLSearchParams(window.location.search);
+    const album = params.get('album') || '';
+    const product = params.get('product') || '';
+    const price = params.get('price') || '0.00';
+    const image = params.get('image') || '';
+    const imageBack = params.get('imageBack') || '';
+
+    // Datos de productos
+    const productData = {
+      'sos-buzo': {
+        title: 'S.O.S HOODIE',
+        price: '60.00',
+        description: 'BUZO CON ESTAMPADO FRONTAL DEL ÁLBUM S.O.S. DISEÑO EXCLUSIVO CON LOGO PATCHLOVE.',
+        images: [image || 'assets/images/merch/SOS_buzo.png', imageBack || 'assets/images/merch/SOS_buzo_reves.png']
+      },
+      'sos-remera': {
+        title: 'S.O.S T-SHIRT',
+        price: '30.00',
+        description: 'REMERA CON ESTAMPADO FRONTAL DEL ÁLBUM S.O.S. DISEÑO EXCLUSIVO CON LOGO PATCHLOVE.',
+        images: [image || 'assets/images/merch/SOS_remera.png', imageBack || 'assets/images/merch/SOS_remera_reves.png']
+      },
+      'sos-cd': {
+        title: 'S.O.S CD',
+        price: '15.00',
+        description: 'CD FÍSICO DEL ÁLBUM S.O.S CON PORTADA EXCLUSIVA Y BOOKLET.',
+        images: [image || 'assets/images/merch/CDfrontSOS.png', imageBack || 'assets/images/merch/CDbackSOS.png']
+      },
+      'sos-vinilo': {
+        title: 'S.O.S VINYL',
+        price: '40.00',
+        description: 'VINILO DEL ÁLBUM S.O.S CON PORTADA EXCLUSIVA Y DISEÑO PREMIUM.',
+        images: [image || 'assets/images/merch/VinylfrontSOS.png', imageBack || 'assets/images/merch/VinylbackSOS.png']
+      },
+      'emptiness-buzo': {
+        title: 'EMPTINESS MACHINE HOODIE',
+        price: '55.00',
+        description: 'BUZO CON ESTAMPADO FRONTAL DEL ÁLBUM EMPTINESS MACHINE. DISEÑO EXCLUSIVO CON LOGO PATCHLOVE.',
+        images: [image || 'assets/images/merch/HoodiefrontE.png', imageBack || 'assets/images/merch/hoodiebackE.png']
+      },
+      'emptiness-remera': {
+        title: 'EMPTINESS MACHINE T-SHIRT',
+        price: '28.00',
+        description: 'REMERA CON ESTAMPADO FRONTAL DEL ÁLBUM EMPTINESS MACHINE. DISEÑO EXCLUSIVO CON LOGO PATCHLOVE.',
+        images: [image || 'assets/images/merch/ShirtfrontE.png', imageBack || 'assets/images/merch/ShirtbackE.png']
+      },
+      'emptiness-cd': {
+        title: 'EMPTINESS MACHINE CD',
+        price: '15.00',
+        description: 'CD FÍSICO DEL ÁLBUM EMPTINESS MACHINE CON PORTADA EXCLUSIVA Y BOOKLET.',
+        images: [image || 'assets/images/merch/CDfrontE.png', imageBack || 'assets/images/merch/CDbackE.png']
+      },
+      'emptiness-vinilo': {
+        title: 'EMPTINESS MACHINE VINYL',
+        price: '42.00',
+        description: 'VINILO DEL ÁLBUM EMPTINESS MACHINE CON PORTADA EXCLUSIVA Y DISEÑO PREMIUM.',
+        images: [image || 'assets/images/merch/VinylfrontE.png', imageBack || 'assets/images/merch/VinylbackE.png']
+      },
+      'system-buzo': {
+        title: 'SYSTEM IN FLAMES HOODIE',
+        price: '58.00',
+        description: 'BUZO CON ESTAMPADO FRONTAL DEL ÁLBUM SYSTEM IN FLAMES. DISEÑO EXCLUSIVO CON LOGO PATCHLOVE.',
+        images: [image || 'assets/images/merch/System_buzo.png', imageBack || 'assets/images/merch/System_buzo_reves.png']
+      },
+      'system-remera': {
+        title: 'SYSTEM IN FLAMES T-SHIRT',
+        price: '30.00',
+        description: 'REMERA CON ESTAMPADO FRONTAL DEL ÁLBUM SYSTEM IN FLAMES. DISEÑO EXCLUSIVO CON LOGO PATCHLOVE.',
+        images: [image || 'assets/images/merch/System_remera.png', imageBack || 'assets/images/merch/System_remera_reves.png']
+      },
+      'system-cd': {
+        title: 'SYSTEM IN FLAMES CD',
+        price: '15.00',
+        description: 'CD FÍSICO DEL ÁLBUM SYSTEM IN FLAMES CON PORTADA EXCLUSIVA Y BOOKLET.',
+        images: [image || 'assets/images/merch/CDfrontS.png', imageBack || 'assets/images/merch/CDbackS.png']
+      },
+      'system-vinilo': {
+        title: 'SYSTEM IN FLAMES VINYL',
+        price: '38.00',
+        description: 'VINILO DEL ÁLBUM SYSTEM IN FLAMES CON PORTADA EXCLUSIVA Y DISEÑO PREMIUM.',
+        images: [image || 'assets/images/merch/VinylfrontS.png', imageBack || 'assets/images/merch/VinylbackS.png']
+      },
+      'patchlove-buzo': {
+        title: 'PATCHLOVE HOODIE',
+        price: '60.00',
+        description: 'BUZO CON ESTAMPADO FRONTAL DEL ÁLBUM PATCHLOVE. DISEÑO EXCLUSIVO CON LOGO PATCHLOVE.',
+        images: [image || 'assets/images/merch/Patch_buzo.png', imageBack || 'assets/images/merch/Patch_buzo_reves.png']
+      },
+      'patchlove-remera': {
+        title: 'PATCHLOVE T-SHIRT',
+        price: '30.00',
+        description: 'REMERA CON ESTAMPADO FRONTAL DEL ÁLBUM PATCHLOVE. DISEÑO EXCLUSIVO CON LOGO PATCHLOVE.',
+        images: [image || 'assets/images/merch/Patch_remera.png', imageBack || 'assets/images/merch/Patch_remera_reves.png']
+      },
+      'patchlove-cd': {
+        title: 'PATCHLOVE CD',
+        price: '15.00',
+        description: 'CD FÍSICO DEL ÁLBUM PATCHLOVE CON PORTADA EXCLUSIVA Y BOOKLET.',
+        images: [image || 'assets/images/merch/CDfrontP.png', imageBack || 'assets/images/merch/CDbackP.png']
+      },
+      'patchlove-vinilo': {
+        title: 'PATCHLOVE VINYL',
+        price: '40.00',
+        description: 'VINILO DEL ÁLBUM PATCHLOVE CON PORTADA EXCLUSIVA Y DISEÑO PREMIUM.',
+        images: [image || 'assets/images/merch/VInylfrontP.png', imageBack || 'assets/images/merch/VinylbackP.png']
+      }
+    };
+
+    // Obtener datos del producto
+    const productKey = `${album}-${product}`.toLowerCase();
+    const currentProduct = productData[productKey] || {
+      title: 'PRODUCTO',
+      price: price,
+      description: 'Descripción del producto.',
+      images: [image || 'assets/images/merch/SOS_buzo.png', imageBack || 'assets/images/merch/SOS_buzo_reves.png']
+    };
+
+    // Actualizar UI
+    document.getElementById('productTitle').textContent = currentProduct.title;
+    document.getElementById('productPrice').textContent = `$${currentProduct.price} USD`;
+    
+    const mainImage = document.getElementById('mainImage');
+    const thumb1 = document.querySelector('#thumb1 img');
+    const thumb2 = document.querySelector('#thumb2 img');
+    
+    mainImage.src = currentProduct.images[0];
+    thumb1.src = currentProduct.images[0];
+    if (currentProduct.images[1]) {
+      thumb2.src = currentProduct.images[1];
+    } else {
+      document.querySelector('#thumb2').style.display = 'none';
+    }
+
+    // Galería de imágenes
+    let currentImageIndex = 0;
+    const images = currentProduct.images.filter(img => img);
+
+    function updateMainImage(index) {
+      mainImage.src = images[index];
+      document.querySelectorAll('.thumbnail').forEach((thumb, i) => {
+        thumb.classList.toggle('active', i === index);
+      });
+    }
+
+    document.querySelectorAll('.thumbnail').forEach((thumb, index) => {
+      thumb.addEventListener('click', () => {
+        currentImageIndex = index;
+        updateMainImage(index);
+      });
+    });
+
+    document.getElementById('nextBtn').addEventListener('click', () => {
+      currentImageIndex = (currentImageIndex + 1) % images.length;
+      updateMainImage(currentImageIndex);
+    });
+
+    document.getElementById('prevBtn').addEventListener('click', () => {
+      currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+      updateMainImage(currentImageIndex);
+    });
+
+    // Selector de talla
+    document.querySelectorAll('.size-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+
+    // Botón agregar al carrito
+    document.getElementById('addToCart').addEventListener('click', () => {
+      const selectedSize = document.querySelector('.size-btn.active')?.dataset.size || 'M';
+      const quantity = document.getElementById('quantity').value;
+      alert(`Agregado al carrito: ${currentProduct.title} - Talla: ${selectedSize} - Cantidad: ${quantity}`);
+    });
+
+    // Toggle menú móvil
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (menuToggle && navLinks) {
+      menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('show');
+      });
+    }
+
+    // Solo mostrar selector de talla para buzos y remeras
+    const isClothing = product.toLowerCase().includes('buzo') || product.toLowerCase().includes('remera');
+    if (!isClothing) {
+      document.querySelector('.form-group:has(#sizeButtons)').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>
+

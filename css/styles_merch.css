@@ -1,0 +1,596 @@
+@font-face {
+  font-family: 'Patchfont';
+  src: url('../assets/fonts/Patchfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Skibidi';
+  src: url('../assets/fonts/MegaGothic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* ========================================
+       NAVEGACIÓN
+    ======================================== */
+    .site-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      z-index: 1000;
+      padding: 0.5rem 2rem;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      gap: 2rem;
+    }
+
+    .logo {
+      margin-right: auto;
+    }
+
+    .logo img {
+      height: 50px;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: normal;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #f23899;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    /* ========================================
+       BANNER MERCHANDISING
+    ======================================== */
+    .banner-merch {
+      background-color: #000;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 20px;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+      margin-top: 66px;
+    }
+
+    .banner-merch-content {
+      width: 100%;
+      max-width: 1300px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .banner-text {
+      margin-left: 60px;
+    }
+
+    .banner-image {
+      margin-right: 60px;
+    }
+
+    .banner-text h1 {
+      font-family: 'Patchfont';
+      font-size: 200px;
+      color: #ff2f87;
+      line-height: 1;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      padding: 0;
+      font-weight: normal;
+    }
+
+    .banner-text h1 span {
+      display: block;
+    }
+
+    .banner-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .modelo-img {
+      width: 100%;
+      max-width: 420px;
+      height: auto;
+      aspect-ratio: 420/270;
+      object-fit: cover;
+      filter: grayscale(100%) brightness(0.9) contrast(1.2);
+      transition: all 0.3s ease;
+      border-radius: 0;
+    }
+
+    .modelo-img:hover {
+      filter: grayscale(60%) brightness(1.1) contrast(1.3);
+    }
+
+    /* ========================================
+       CONTENEDOR PRINCIPAL
+    ======================================== */
+    .merch-container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 40px 20px 100px 20px;
+    }
+
+    /* ========================================
+       ENCABEZADO Y SELECTOR
+    ======================================== */
+    .album-banner {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .album-banner h2 {
+      font-family: Arial, sans-serif;
+      font-weight: 600;
+      font-size: 1.4rem;
+      color: #fff;
+      letter-spacing: 1px;
+      margin: 0;
+      text-transform: uppercase;
+    }
+
+    .album-selector {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 3rem;
+    }
+
+    .album-dropdown {
+      background: #000;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      color: #fff;
+      font-weight: 700;
+      padding: 16px 50px 16px 48px;
+      border-radius: 50px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+      text-align: left;
+      text-align-last: left;
+      min-width: 200px;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23ffffff' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 20px center;
+    }
+
+    .album-dropdown option {
+      text-align: left;
+      background: #000;
+      color: #fff;
+    }
+
+    .album-dropdown:hover {
+      background: rgba(0, 0, 0, 0.9);
+      border-color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+    }
+
+    /* ========================================
+       SECCIONES DE ÁLBUMES
+    ======================================== */
+    .album-section {
+      display: none;
+    }
+
+    .album-section.active {
+      display: block;
+    }
+
+    .album-title {
+      color: #fff;
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 30px;
+      border-bottom: 1px solid #222;
+      padding-bottom: 10px;
+    }
+
+    /* ========================================
+       GRID DE PRODUCTOS
+    ======================================== */
+    .merch-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 60px 30px;
+      justify-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .merch-item {
+      background: transparent;
+      border: none;
+      text-align: center;
+      transition: all 0.3s ease;
+      width: 100%;
+      max-width: 280px;
+      text-decoration: none;
+      display: block;
+      color: inherit;
+    }
+
+    .merch-item:hover {
+      transform: translateY(-4px);
+    }
+
+    .merch-item img {
+      display: block;
+      margin: 0 auto 8px auto;
+      width: 100%;
+      height: auto;
+      min-height: 400px;
+      max-height: 500px;
+      object-fit: contain;
+    }
+
+    .merch-item h3 {
+      color: #fff;
+      font-size: 1.3rem;
+      margin: 0;
+      font-weight: normal;
+      text-align: center;
+      margin-top: 4px;
+    }
+
+    .price {
+      color: #ff2f87;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-top: 4px;
+      display: block;
+      text-align: center;
+    }
+
+    /* ========================================
+       FOOTER
+    ======================================== */
+    .footer {
+      background: url('../assets/images/pages/Patch.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: #fff;
+      padding: 40px 20px 20px;
+      position: relative;
+    }
+
+    .footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 1;
+    }
+
+    .footer > * {
+      position: relative;
+      z-index: 2;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto 30px;
+      position: relative;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 20px;
+      position: absolute;
+      left: 0;
+    }
+
+    .social-icon {
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
+
+    .social-icon img {
+      width: 32px;
+      height: 32px;
+      filter: brightness(0) invert(1);
+      transition: filter 0.3s ease;
+    }
+
+    .social-icon:hover {
+      transform: scale(1.1);
+    }
+
+    .social-icon:hover img {
+      filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(300deg);
+    }
+
+    .brand-name h2 {
+      font-family: 'Patchfont', Arial, sans-serif;
+      font-size: 48px;
+      font-weight: 900;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .copyright p {
+      font-size: 14px;
+      margin: 0;
+      font-weight: normal;
+    }
+
+    /* ========================================
+       RESPONSIVE - TABLET
+    ======================================== */
+    @media (max-width: 1100px) {
+      .banner-text h1 {
+        font-size: 150px;
+      }
+
+      .modelo-img {
+        max-width: 350px;
+      }
+
+      .merch-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 40px 20px;
+      }
+    }
+
+    /* ========================================
+       RESPONSIVE - MÓVIL
+    ======================================== */
+    @media (max-width: 768px) {
+      /* Navegación móvil */
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.95);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        flex-direction: column;
+        display: none;
+        text-align: center;
+        padding: 1rem 0;
+        gap: 1rem;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-inner {
+        padding: 0.5rem 1rem;
+        gap: 1rem;
+      }
+
+      .logo img {
+        height: 40px;
+      }
+
+      .banner-merch {
+        height: 250px;
+        padding: 0 20px;
+        margin-top: 60px;
+      }
+
+      .banner-merch-content {
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .banner-text {
+        margin-left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .banner-image {
+        display: none;
+      }
+
+      .banner-text h1 {
+        font-size: 100px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .modelo-img {
+        max-width: 320px;
+      }
+
+      .merch-container {
+        padding: 30px 15px 60px 15px;
+      }
+
+      .album-banner h2 {
+        font-size: 1.2rem;
+        text-align: center;
+      }
+
+      .album-dropdown {
+        padding: 14px 36px;
+        font-size: 1rem;
+        min-width: 180px;
+      }
+
+      .album-title {
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+      }
+
+      .merch-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px 15px;
+      }
+
+      /* Footer móvil */
+      .footer {
+        padding: 15px 10px;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        margin-bottom: 15px;
+      }
+
+      .social-links {
+        position: static;
+        justify-content: center;
+        gap: 12px;
+      }
+
+      .brand-name h2 {
+        font-size: 28px;
+      }
+
+      .social-icon img {
+        width: 24px;
+        height: 24px;
+      }
+
+      .copyright {
+        margin-top: 10px;
+      }
+
+      .copyright p {
+        font-size: 12px;
+      }
+    }
+
+    /* ========================================
+       RESPONSIVE - MÓVIL PEQUEÑO
+    ======================================== */
+    @media (max-width: 480px) {
+      .logo img {
+        height: 40px;
+      }
+
+      .banner-merch {
+        height: 200px;
+        padding: 0 15px;
+        margin-top: 60px;
+      }
+
+      .banner-merch-content {
+        flex-direction: column;
+        gap: 15px;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .banner-text {
+        margin-left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .banner-image {
+        display: none;
+      }
+
+      .banner-text h1 {
+        font-size: 60px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .album-banner h2 {
+        font-size: 1rem;
+      }
+
+      .album-title {
+        font-size: 1.4rem;
+      }
+
+      .merch-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .merch-item {
+        max-width: 250px;
+      }
+    }

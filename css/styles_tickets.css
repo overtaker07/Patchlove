@@ -1,0 +1,559 @@
+/* ========================================
+   FUENTES
+======================================== */
+@font-face {
+  font-family: 'Patchfont';
+  src: url('../assets/fonts/Patchfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Skibidi';
+  src: url('../assets/fonts/MegaGothic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ========================================
+   RESET Y BASE
+======================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #fff;
+  background: #000;
+  text-align: center;
+}
+
+/* ========================================
+   NAVEGACIÓN (Heredada de styles_tabs.css)
+======================================== */
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1000;
+  padding: 0.5rem 2rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.nav-inner {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+.logo { 
+  margin-right: auto; 
+}
+
+.logo img { 
+  height: 50px; 
+  display: block; 
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: normal;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { 
+  color: #f23899; 
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* ========================================
+   BANNER
+======================================== */
+.banner {
+  width: 100%;
+  height: 400px;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  position: relative;
+  margin-top: 66px;
+  padding: 0 4%;
+}
+
+.banner p {
+  font-family: 'Patchfont';
+  font-size: 200px;
+  color: #ff2f87;
+  line-height: 1;
+  text-align: left;
+}
+
+.banner img {
+  width: 400px;
+  height: 400px;
+  filter: grayscale(100%) brightness(0.9) contrast(1.2);
+}
+
+/* ========================================
+   CONTENEDOR DE TICKETS
+======================================== */
+.tickets-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1400px;
+  margin: 60px auto 40px;
+  padding: 0 1rem;
+}
+
+.ticket-container {
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.9);
+  border-radius: 16px;
+  border: 2px solid rgba(255, 47, 135, 0.4);
+  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.2);
+}
+
+.ticket-inner {
+  padding: 0.5rem;
+}
+
+.ticket-title {
+  font-family: "Skibidi", Arial, sans-serif;
+  font-size: 2.5rem;
+  color: #ff2f87;
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.ticket-price {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #ff2f87;
+  margin-bottom: 1rem;
+  opacity: 0.95;
+}
+
+.ticket-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  opacity: 0.95;
+  margin-top: 8px;
+  text-align: center;
+}
+
+/* ========================================
+   CONTROLES Y BOTONES
+======================================== */
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 32px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.btn-buy {
+  background: #000;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+}
+
+.btn-buy:hover {
+  background: rgba(0, 0, 0, 0.9);
+  border-color: #fff;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+}
+
+.btn-back {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: #fff;
+  display: none;
+}
+
+.btn-back:hover {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* ========================================
+   INCLUDES (Desplegable)
+======================================== */
+.includes {
+  margin-top: 12px;
+  text-align: left;
+}
+
+.includes-toggle {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: #ff2f87;
+  font-weight: 800;
+  padding: 8px 6px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  text-align: left;
+}
+
+.includes-toggle:hover {
+  opacity: 0.8;
+}
+
+.includes-toggle .arrow {
+  transition: transform 0.25s ease;
+}
+
+.includes-content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.35s ease, opacity 0.35s ease;
+}
+
+.includes-content.open {
+  max-height: 300px;
+  padding-top: 10px;
+  opacity: 1;
+}
+
+.includes-content ul {
+  list-style: disc;
+  color: #fff;
+  font-size: 0.85rem;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.includes-content ul li {
+  margin: 4px 0;
+  padding: 2px 0;
+}
+
+/* ========================================
+   FOOTER
+======================================== */
+.footer {
+  background: url('../assets/images/pages/Patch.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+  padding: 40px 20px 20px;
+  position: relative;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+.footer > * {
+  position: relative;
+  z-index: 2;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto 30px;
+  position: relative;
+}
+
+.social-links {
+  display: flex;
+  gap: 20px;
+  position: absolute;
+  left: 0;
+}
+
+.social-icon {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.social-icon img {
+  width: 32px;
+  height: 32px;
+  filter: brightness(0) invert(1);
+  transition: filter 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+}
+
+.social-icon:hover img {
+  filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(300deg);
+}
+
+.brand-name h2 {
+  font-family: 'Patchfont', Arial, sans-serif;
+  font-size: 48px;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.copyright p {
+  font-size: 14px;
+  margin: 0;
+  font-weight: normal;
+}
+
+/* ========================================
+   RESPONSIVE - TABLET (hasta 1024px)
+======================================== */
+@media (max-width: 1024px) {
+  .tickets-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .ticket-container {
+    padding: 1rem;
+  }
+
+  .ticket-title {
+    font-size: 2rem;
+  }
+
+  .ticket-price {
+    font-size: 1.7rem;
+  }
+
+  .banner {
+    height: 300px;
+  }
+
+  .banner p {
+    font-size: 150px;
+  }
+
+  .banner img {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+/* ========================================
+   RESPONSIVE - MÓVIL (hasta 768px)
+======================================== */
+@media (max-width: 768px) {
+  /* Navegación móvil */
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    flex-direction: column;
+    display: none;
+    padding: 1rem 0;
+    gap: 1rem;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-inner {
+    padding: 0.5rem 1rem;
+    gap: 1rem;
+  }
+
+  .logo img {
+    height: 40px;
+  }
+
+  /* Banner móvil */
+  .banner {
+    height: 250px;
+    margin-top: 60px;
+    justify-content: center;
+  }
+
+  .banner p {
+    font-size: 80px;
+  }
+
+  .banner img {
+    display: none;
+  }
+
+  /* Tickets móvil */
+  .tickets-wrapper {
+    grid-template-columns: 1fr;
+    margin: 40px auto;
+    padding: 0 20px;
+    gap: 20px;
+  }
+
+  .ticket-container {
+    padding: 1rem;
+  }
+
+  .ticket-title {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+  }
+
+  .ticket-price {
+    font-size: 1.8rem;
+  }
+
+  .ticket-meta {
+    font-size: 0.9rem;
+  }
+
+  /* Footer móvil */
+  .footer {
+    padding: 15px 10px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .social-links {
+    position: static;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .brand-name h2 {
+    font-size: 28px;
+  }
+
+  .social-icon img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .copyright {
+    margin-top: 10px;
+  }
+
+  .copyright p {
+    font-size: 12px;
+  }
+}
+
+/* ========================================
+   RESPONSIVE - MÓVIL PEQUEÑO (hasta 480px)
+======================================== */
+@media (max-width: 480px) {
+  .banner {
+    height: 200px;
+  }
+
+  .banner p {
+    font-size: 60px;
+  }
+
+  .ticket-title {
+    font-size: 2rem;
+    letter-spacing: 1px;
+  }
+
+  .ticket-price {
+    font-size: 1.6rem;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+    padding: 10px 18px;
+  }
+
+  .tickets-wrapper {
+    margin: 30px auto 20px;
+    padding: 0 15px;
+  }
+
+  .ticket-container {
+    padding: 0.8rem;
+  }
+
+  .brand-name h2 {
+    font-size: 32px;
+  }
+
+  .social-icon img {
+    width: 24px;
+    height: 24px;
+  }
+}

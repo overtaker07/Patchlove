@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Entradas - Patchlove</title>
+  <link rel="icon" href="assets/icons/icon.png">
+  <link rel="stylesheet" href="css/styles_tickets.css">
+</head>
+<body>
+
+  <!-- Navegación -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <div class="logo">
+        <a href="index.html">
+          <img src="assets/icons/logo.png" alt="Logo Patchlove">
+        </a>
+      </div>
+      <div class="nav-links">
+        <a href="index.html#sobre">Sobre nosotros</a>
+        <a href="index.html#musica">Explora nuestra música</a>
+        <a href="index.html#tour">Tour</a>
+        <a href="Merch.html">Merch</a>
+        <a href="index.html#contacto">Contacto</a>
+      </div>
+      <div class="menu-toggle">&#9776;</div>
+    </div>
+  </nav>
+
+  <!-- Banner -->
+  <header class="banner">
+    <p>Consigue tu entrada</p>
+    <img src="assets/images/tour/entrada.png" alt="Miembros de la banda">
+  </header>
+
+  <!-- Tickets -->
+  <main class="tickets-wrapper">
+    
+    <!-- Ticket Económico -->
+    <article class="ticket-container ticket-economico">
+      <div class="ticket-inner">
+        <h1 class="ticket-title">ENTRADA RITMO</h1>
+        <div class="ticket-price">$35</div>
+
+        <div class="ticket-meta">
+          <div><strong>Ciudad:</strong> <span class="city">--</span></div>
+          <div><strong>Fecha:</strong> <span class="date">--</span></div>
+          <div><strong>Lugar:</strong> <span class="venue">--</span></div>
+        </div>
+
+        <div class="controls">
+          <a class="btn btn-buy" href="#" role="button">Comprar ahora</a>
+          <a class="btn btn-back" href="index.html">Volver al inicio</a>
+        </div>
+
+        <div class="includes">
+          <button class="includes-toggle">Más información <span class="arrow">▼</span></button>
+          <div class="includes-content">
+            <ul>
+              <li>Acceso general al show</li>
+              <li>Zona trasera o campo abierto</li>
+              <li>Wifi gratuito</li>
+              <li>Acceso al puesto de merch</li>
+              <li>Sin beneficios adicionales</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Ticket Estándar -->
+    <article class="ticket-container ticket-estandar">
+      <div class="ticket-inner">
+        <h1 class="ticket-title">ENTRADA PULSO</h1>
+        <div class="ticket-price">$70</div>
+
+        <div class="ticket-meta">
+          <div><strong>Ciudad:</strong> <span class="city">--</span></div>
+          <div><strong>Fecha:</strong> <span class="date">--</span></div>
+          <div><strong>Lugar:</strong> <span class="venue">--</span></div>
+        </div>
+
+        <div class="controls">
+          <a class="btn btn-buy" href="#" role="button">Comprar ahora</a>
+          <a class="btn btn-back" href="index.html">Volver al inicio</a>
+        </div>
+
+        <div class="includes">
+          <button class="includes-toggle">Más información <span class="arrow">▼</span></button>
+          <div class="includes-content">
+            <ul>
+              <li>Acceso preferencial al show</li>
+              <li>Zona media o platea con mejor vista</li>
+              <li>WiFi gratuito</li>
+              <li>Acceso al puesto de merch</li>
+              <li>Merchandising exclusivo (pulsera + póster edición limitada)</li>
+              <li>Stand de fotos con fondo oficial Patchlove</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Ticket VIP -->
+    <article class="ticket-container ticket-vip">
+      <div class="ticket-inner">
+        <h1 class="ticket-title">ENTRADA ÉXTASIS</h1>
+        <div class="ticket-price">$120</div>
+
+        <div class="ticket-meta">
+          <div><strong>Ciudad:</strong> <span class="city">--</span></div>
+          <div><strong>Fecha:</strong> <span class="date">--</span></div>
+          <div><strong>Lugar:</strong> <span class="venue">--</span></div>
+        </div>
+
+        <div class="controls">
+          <a class="btn btn-buy" href="#" role="button">Comprar ahora</a>
+          <a class="btn btn-back" href="index.html">Volver al inicio</a>
+        </div>
+
+        <div class="includes">
+          <button class="includes-toggle">Más información <span class="arrow">▼</span></button>
+          <div class="includes-content">
+            <ul>
+              <li>Ingreso prioritario (sin filas)</li>
+              <li>Zona exclusiva frente al escenario o área lounge</li>
+              <li>Merchandising premium (remera, lanyard, póster firmado)</li>
+              <li>Acceso a prueba de sonido o meet & greet grupal</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </main>
+
+  <!-- Footer -->
+  <footer id="contacto" class="footer">
+    <div class="footer-content">
+      <div class="social-links">
+        <a href="https://www.instagram.com/patchloveband" class="social-icon">
+          <img src="assets/icons/instagram.png" alt="Instagram">
+        </a>
+        <a href="https://www.x.com/patchloveband" class="social-icon">
+          <img src="assets/icons/twitter.png" alt="Twitter">
+        </a>
+        <a href="mailto:etherispatchlove@gmail.com" class="social-icon">
+          <img src="assets/icons/email.png" alt="Gmail">
+        </a>
+      </div>
+      
+      <div class="brand-name">
+        <h2>PATCHLOVE</h2>
+      </div>
+    </div>
+    
+    <div class="copyright">
+      <p>&copy; 2025 Patchlove. Privacy Policy. Terms of Use.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Mostrar datos desde la URL
+    const params = new URLSearchParams(window.location.search);
+    const cityElements = document.querySelectorAll('.city');
+    const dateElements = document.querySelectorAll('.date');
+    const venueElements = document.querySelectorAll('.venue');
+    
+    cityElements.forEach(el => el.textContent = params.get('city') || '---');
+    dateElements.forEach(el => el.textContent = params.get('date') || '---');
+    venueElements.forEach(el => el.textContent = params.get('venue') || '---');
+
+    // Toggle menú móvil
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (menuToggle && navLinks) {
+      menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('show');
+      });
+    }
+
+    // Botones de compra - Mensaje de mantenimiento
+    const buyButtons = document.querySelectorAll('.btn-buy');
+    buyButtons.forEach(button => {
+      button.addEventListener('click', (e) => {
+        e.preventDefault();
+        alert('Opción de compra en mantenimiento');
+      });
+    });
+
+    // Toggle includes
+    const inclToggles = document.querySelectorAll('.includes-toggle');
+    inclToggles.forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        const content = toggle.parentElement.querySelector('.includes-content');
+        const arrow = toggle.querySelector('.arrow');
+        
+        if (content) {
+          const isOpen = content.classList.contains('open');
+          content.classList.toggle('open');
+          arrow.style.transform = isOpen ? 'rotate(0deg)' : 'rotate(180deg)';
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

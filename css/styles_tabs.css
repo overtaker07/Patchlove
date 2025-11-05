@@ -1,0 +1,856 @@
+/* ========================================
+   RESET Y FUENTES
+======================================== */
+@font-face {
+  font-family: 'Patchfont';
+  src: url('../assets/fonts/Patchfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Skibidi';
+  src: url('../assets/fonts/MegaGothic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
+body { 
+  font-family: Arial, sans-serif; 
+  color: #fff; 
+  font-size: 16px;
+  background: #000;
+  line-height: 1.6;
+}
+
+/* ========================================
+   NAVEGACIÓN FIJA
+======================================== */
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1000;
+  padding: 0.5rem 2rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.nav-inner {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+.logo { 
+  margin-right: auto; 
+}
+
+.logo img { 
+  height: 50px; 
+  display: block; 
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: normal;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { 
+  color: #f23899; 
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* ========================================
+   BANNER
+======================================== */
+.banner {
+  width: 100%;
+  height: 400px;
+  background: #000;
+  color: #ff2f87;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 250px;
+  font-family: 'Patchfont';
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  text-align: center;
+  margin-top: 66px;
+  font-weight: normal;
+}
+
+.banner p {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+/* ========================================
+   VIDEO
+======================================== */
+.video-section {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  border-top: 2px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.video-section video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ========================================
+   SOBRE NOSOTROS
+======================================== */
+.sobre-nosotros {
+  background: #000;
+  overflow: hidden;
+}
+
+.sobre-contenido {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 4rem;
+  padding: 6rem 8%;
+  min-height: 70vh;
+  position: relative;
+}
+
+.sobre-contenido.invertido {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.sobre-contenido.invertido .texto {
+  order: 2;
+}
+
+.sobre-contenido.invertido .imagen {
+  order: 1;
+}
+
+/* Separador entre bloques */
+.sobre-contenido::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(255, 255, 255, 0.2) 50%, 
+    transparent 100%);
+}
+
+.sobre-contenido:last-child::after {
+  display: none;
+}
+
+.sobre-contenido .texto {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.sobre-contenido h2 {
+  font-size: 3.5rem;
+  margin-bottom: 30px;
+  color: #ff2f87;
+  font-weight: 900;
+  letter-spacing: -1px;
+  position: relative;
+  display: inline-block;
+}
+
+.sobre-contenido h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: #ff2f87;
+  border-radius: 2px;
+}
+
+.sobre-contenido p {
+  line-height: 1.8;
+  margin-bottom: 1.2rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.1rem;
+}
+
+.sobre-contenido p:last-child {
+  margin-top: 2rem;
+  color: #ff66c4;
+  font-weight: 600;
+  font-style: italic;
+  font-size: 1rem;
+}
+
+.sobre-contenido .imagen img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
+   MÚSICA
+======================================== */
+.musica {
+  padding: 80px 20px;
+  text-align: center;
+  background: #000;
+}
+
+.musica h2 {
+  font-size: 4rem;
+  margin-bottom: 60px;
+  font-weight: 900;
+  color: #ff2f87;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+}
+
+.album-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.album {
+  position: relative;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.album:hover {
+  transform: translateY(-15px);
+}
+
+.album a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.album img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 20px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+}
+
+.album:hover img {
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9);
+  filter: brightness(1.1);
+}
+
+.album p {
+  font-size: 1.3rem;
+  margin-top: 20px;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.album:hover p {
+  color: #ff66c4;
+  transform: translateY(5px);
+}
+
+/* ========================================
+   TOUR
+======================================== */
+.hero {
+  background: #000;
+  background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png');
+  background-blend-mode: multiply;
+  padding: 60px 40px;
+}
+
+.hero img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.tabs {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.tabs input[type="radio"] {
+  display: none;
+}
+
+.tabs label {
+  display: inline-block;
+  background: #ff2f87;
+  color: white;
+  padding: 10px 20px;
+  margin: 0 5px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.tabs label:hover {
+  background: #e02874;
+}
+
+.tab-content {
+  display: none;
+  margin-top: 40px;
+}
+
+#tab-norte:checked ~ .tab-content.norte,
+#tab-sur:checked ~ .tab-content.sur,
+#tab-asia:checked ~ .tab-content.asia,
+#tab-europa:checked ~ .tab-content.europa {
+  display: block;
+}
+
+.tour-dates { 
+  margin-top: 40px; 
+  background-color: #000;
+  text-align: left; 
+}
+
+.date {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+  margin-left: 40px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.date-info { 
+  display: flex; 
+  flex-direction: column; 
+}
+
+.city {
+  font-size: 34px;
+  font-weight: 900;
+  line-height: 1;
+  display: block;
+}
+
+.date-big {
+  font-size: 34px;
+  font-weight: 400;
+  margin-top: 6px;
+  display: block;
+  color: white;
+}
+
+.venue {
+  opacity: 0.55;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-top: 2px;
+  margin-left: 6px;
+  color: #f3f3f3;
+}
+
+.buttons {
+  margin-left: auto;
+  margin-right: 70px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.btn {
+  min-width: 120px;
+  text-align: center;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+  border-radius: 9999px;
+  background-color: #ff2f87;
+}
+
+.btn:hover { 
+  background-color: #e02874; 
+  transform: translateY(-1px); 
+}
+
+/* ========================================
+   FOOTER
+======================================== */
+.footer {
+  background: url('../assets/images/pages/Patch.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+  padding: 40px 20px 20px;
+  position: relative;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+.footer > * {
+  position: relative;
+  z-index: 2;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto 30px;
+  position: relative;
+}
+
+.social-links {
+  display: flex;
+  gap: 20px;
+  position: absolute;
+  left: 0;
+}
+
+.social-icon {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.social-icon img {
+  width: 32px;
+  height: 32px;
+  filter: brightness(0) invert(1);
+  transition: filter 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+}
+
+.social-icon:hover img {
+  filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(300deg);
+}
+
+.brand-name h2 {
+  font-family: 'Patchfont', Arial, sans-serif;
+  font-size: 48px;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.copyright p {
+  font-size: 14px;
+  margin: 0;
+}
+
+/* ========================================
+   RESPONSIVE - TABLET (769px - 1024px)
+======================================== */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .banner {
+    height: 300px;
+    font-size: 180px;
+  }
+
+  .video-section {
+    height: 80vh;
+  }
+
+  .sobre-contenido {
+    grid-template-columns: 1fr;
+    padding: 4rem 5%;
+    gap: 3rem;
+    min-height: auto;
+  }
+
+  .sobre-contenido.invertido {
+    grid-template-columns: 1fr;
+  }
+
+  .sobre-contenido.invertido .texto,
+  .sobre-contenido.invertido .imagen {
+    order: initial;
+  }
+
+  .sobre-contenido h2 {
+    font-size: 2.8rem;
+  }
+
+  .musica h2 {
+    font-size: 3rem;
+  }
+
+  .album-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+  }
+
+  .hero {
+    padding: 40px 20px;
+  }
+
+  .date {
+    margin-left: 60px;
+  }
+
+  .city, .date-big {
+    font-size: 28px;
+  }
+
+  .btn {
+    min-width: 100px;
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+}
+
+/* ========================================
+   RESPONSIVE - MÓVIL (hasta 768px)
+======================================== */
+@media (max-width: 768px) {
+  /* Navegación móvil */
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    flex-direction: column;
+    display: none;
+    text-align: center;
+    padding: 1rem 0;
+    gap: 1rem;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .menu-toggle { 
+    display: block; 
+  }
+
+  .nav-inner {
+    padding: 0.5rem 1rem;
+    gap: 1rem;
+  }
+
+  .logo img {
+    height: 40px;
+  }
+
+  /* Banner móvil */
+  .banner {
+    height: 250px;
+    font-size: 100px;
+    padding: 0 20px;
+  }
+
+  /* Video móvil */
+  .video-section {
+    height: 60vh;
+  }
+
+  /* Sobre nosotros móvil */
+  .sobre-contenido {
+    grid-template-columns: 1fr;
+    padding: 3rem 5%;
+    gap: 2rem;
+    min-height: auto;
+  }
+
+  .sobre-contenido.invertido {
+    grid-template-columns: 1fr;
+    background: transparent;
+  }
+
+  .sobre-contenido.invertido .texto,
+  .sobre-contenido.invertido .imagen {
+    order: initial;
+  }
+
+  .sobre-contenido h2 {
+    font-size: 2.2rem;
+    text-align: left;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .sobre-contenido h2::after {
+    left: 0;
+    transform: none;
+  }
+  
+  .sobre-contenido .texto {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .sobre-contenido p {
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .sobre-contenido .imagen img {
+    border-radius: 15px;
+  }
+
+  /* Música móvil */
+  .musica {
+    padding: 50px 15px;
+  }
+
+  .musica h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+  }
+
+  .album-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 0 10px;
+  }
+
+  .album p {
+    font-size: 1rem;
+    margin-top: 15px;
+  }
+
+  /* Tour móvil */
+  .hero {
+    padding: 30px 15px;
+  }
+
+  .tabs {
+    margin-top: 20px;
+  }
+
+  .tabs label {
+    padding: 8px 15px;
+    margin: 0 8px 15px 8px;
+    font-size: 14px;
+  }
+
+  .date {
+    display: flex;
+    align-items: center;
+    margin-left: 0;
+    margin-right: 0;
+    gap: 15px;
+    justify-content: space-between;
+  }
+
+  .date-info {
+    flex: 1;
+    margin-left: 15px;
+    text-align: left;
+  }
+
+  .city, .date-big {
+    font-size: 24px;
+    text-align: left;
+  }
+
+  .venue {
+    margin: 0;
+    margin-top: 6px;
+    text-align: left;
+  }
+
+  .buttons {
+    margin: 0;
+    flex-direction: row;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+
+  .btn {
+    width: 120px;
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  /* Footer móvil */
+  .footer {
+    padding: 15px 10px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .social-links {
+    position: static;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .brand-name h2 {
+    font-size: 28px;
+  }
+
+  .social-icon img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .copyright {
+    margin-top: 10px;
+  }
+
+  .copyright p {
+    font-size: 12px;
+  }
+}
+
+/* ========================================
+   RESPONSIVE - MÓVIL PEQUEÑO (hasta 480px)
+======================================== */
+@media (max-width: 480px) {
+  .banner {
+    height: 200px;
+    font-size: 60px;
+    padding: 0 15px;
+  }
+
+  .video-section {
+    height: 50vh;
+  }
+
+  .sobre-contenido {
+    padding: 2rem 4%;
+    gap: 1.5rem;
+  }
+
+  .sobre-contenido h2 {
+    font-size: 1.8rem;
+  }
+
+  .sobre-contenido p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .sobre-contenido p:last-child {
+    font-size: 0.9rem;
+    margin-top: 1.5rem;
+  }
+
+  .musica {
+    padding: 40px 10px;
+  }
+
+  .musica h2 {
+    font-size: 2rem;
+  }
+
+  .album-grid {
+    gap: 15px;
+  }
+
+  .album p {
+    font-size: 0.9rem;
+  }
+
+  .hero {
+    padding: 20px 10px;
+  }
+
+  .tabs label {
+    padding: 6px 10px;
+    margin: 0 5px 12px 5px;
+    font-size: 12px;
+  }
+
+  .city, .date-big {
+    font-size: 20px;
+  }
+
+  .btn {
+    min-width: 70px;
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+}
