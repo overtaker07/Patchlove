@@ -219,22 +219,55 @@
     albumSelect.addEventListener('change', showSelectedAlbum);
     showSelectedAlbum();
 
-    // Efecto hover para cambiar imágenes en buzos y remeras
+    // Inicializar y configurar efecto hover para imágenes
     const merchItems = document.querySelectorAll('.merch-item');
+    
+    // Primero: Guardar el src original de todas las imágenes
+    merchItems.forEach(item => {
+      const img = item.querySelector('img');
+      const originalSrc = img.getAttribute('src');
+      img.setAttribute('data-original-src', originalSrc);
+    });
+    
+    // Función para restaurar todas las imágenes a su estado original
+    function restaurarImagenes() {
+      merchItems.forEach(item => {
+        const img = item.querySelector('img');
+        const originalSrc = img.getAttribute('data-original-src');
+        if (originalSrc) {
+          img.src = originalSrc;
+        }
+      });
+    }
+
+    // Configurar efecto hover para cambiar imágenes
     merchItems.forEach(item => {
       const img = item.querySelector('img');
       const hoverImage = img.getAttribute('data-hover-image');
       
       if (hoverImage) {
-        const originalSrc = img.src;
-        
         item.addEventListener('mouseenter', () => {
           img.src = hoverImage;
         });
         
         item.addEventListener('mouseleave', () => {
-          img.src = originalSrc;
+          const original = img.getAttribute('data-original-src');
+          if (original) {
+            img.src = original;
+          }
         });
+      }
+    });
+    
+    // Restaurar todas las imágenes al cargar la página o cuando se vuelve atrás
+    window.addEventListener('pageshow', () => {
+      restaurarImagenes();
+    });
+    
+    // Restaurar cuando la página vuelve a ser visible (útil para responsive)
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden) {
+        restaurarImagenes();
       }
     });
   </script>
