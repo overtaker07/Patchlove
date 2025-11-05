@@ -142,15 +142,9 @@
       width: 100%;
       max-width: 420px;
       height: auto;
-      aspect-ratio: 420/270;
-      object-fit: cover;
-      filter: grayscale(100%) brightness(0.9) contrast(1.2);
+      object-fit: contain;
       transition: all 0.3s ease;
       border-radius: 0;
-    }
-
-    .modelo-img:hover {
-      filter: grayscale(60%) brightness(1.1) contrast(1.3);
     }
 
     /* ========================================
